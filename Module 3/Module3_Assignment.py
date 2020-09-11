@@ -56,6 +56,16 @@ transCounter = 0
 while curCount > 0:
     transCounter = transCounter + 1
 
+    # Selecting a random number in the range of the minimum and maximum
+    transaction_time_a = random.randint(minimum, maximum)
+    transaction_time_b = random.randint(minimum, maximum)
+    transaction_time_c = random.randint(minimum, maximum)
+
+    # The new time is the sum of the teller's speed and the transaction time
+    new_time_a = timeItTakesA + transaction_time_a
+    new_time_b = timeItTakesB + transaction_time_b
+    new_time_c = timeItTakesC + transaction_time_c
+
     if hasCustA == False:
         if len(aCustomers) > 0:
             tellerA.append(aCustomers.pop(0))
@@ -64,7 +74,7 @@ while curCount > 0:
             break
 
     runTimeA = runTimeA + 1
-    if runTimeA == timeItTakesA:
+    if runTimeA == new_time_a:
         runTimeA = 0;
         hasCustA = False   
 
@@ -78,7 +88,7 @@ while curCount > 0:
             break
 
     runTimeB = runTimeB + 1
-    if runTimeB == timeItTakesB:
+    if runTimeB == new_time_b:
         runTimeB = 0;
         hasCustB = False   
 
@@ -92,7 +102,7 @@ while curCount > 0:
             break
 
     runTimeC = runTimeC + 1	
-    if runTimeC == timeItTakesC:
+    if runTimeC == new_time_c:
         runTimeC = 0;
         hasCustC = False   
 
