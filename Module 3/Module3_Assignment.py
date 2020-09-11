@@ -26,10 +26,10 @@ timeItTakesB = 5
 timeItTakesC = 10
 
 # Minimum additional length of transactions
-minimum = 0
+minimum = -2
 
 # Maximum additional length of transactions
-maximum = 0
+maximum = 5
 
 # Initialized variable that will contain the actual running time for every 
 # teller
@@ -74,7 +74,7 @@ while curCount > 0:
             break
 
     runTimeA = runTimeA + 1
-    if runTimeA == new_time_a:
+    if runTimeA >= new_time_a:
         runTimeA = 0;
         hasCustA = False   
 
@@ -88,7 +88,7 @@ while curCount > 0:
             break
 
     runTimeB = runTimeB + 1
-    if runTimeB == new_time_b:
+    if runTimeB >= new_time_b:
         runTimeB = 0;
         hasCustB = False   
 
@@ -102,7 +102,7 @@ while curCount > 0:
             break
 
     runTimeC = runTimeC + 1	
-    if runTimeC == new_time_c:
+    if runTimeC >= new_time_c:
         runTimeC = 0;
         hasCustC = False   
 
