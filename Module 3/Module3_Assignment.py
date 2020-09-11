@@ -1,9 +1,18 @@
 # Simple Banking queue simulation program
 # By: Marvin M. Monteagudo
 
+# Added length of transactions for each costumer might have
+# Modified by: Gerard Vince I. Lillo
+
 # This simple program simulates the transaction queueing in a bank, assuming 
 # that each teller has their own transaction completion capability
 
+# Libraries
+import random
+import os
+
+# Initialize random seed
+random.seed = (os.urandom(1024))
 
 # Arrays that will hold each teller's list of clients   
 tellerA = []
@@ -15,6 +24,12 @@ tellerC = []
 timeItTakesA = 1
 timeItTakesB = 5
 timeItTakesC = 10
+
+# Minimum additional length of transactions
+minimum = 0
+
+# Maximum additional length of transactions
+maximum = 0
 
 # Initialized variable that will contain the actual running time for every 
 # teller
